@@ -42,7 +42,7 @@ function JokeList({ jokes }) {
             <h1 className="noJokes">No jokes found for that search!</h1>
           )}
         {filteredJokes.map((joke) => (
-          <li>
+          <li key={joke.id}>
             <Joke joke={joke} />
           </li>
         ))}
