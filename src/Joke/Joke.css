@@ -1,0 +1,11 @@
+.hidden{
+    display: none;
+    height: 0;
+}
+.jokePunchline{
+    font-style: italic;
+    margin-top: 0.5em;
+}
+.jokePunchlineBtn{
+    margin: 0.5em 0;
+}

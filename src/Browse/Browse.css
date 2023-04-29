@@ -1,0 +1,13 @@
+.sidebar{
+    width: 200px;
+    padding: 1em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar > button{
+    margin: 1em;
+    width: 100%;
+}

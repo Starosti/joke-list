@@ -1,0 +1,15 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+@media (max-width: 768px){
+    .mainContainer{
+        flex-direction: column;
+    }
+}
+.mainContainer h1{
+    font-size: 1.5em;
+}

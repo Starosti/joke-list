@@ -1,0 +1,35 @@
+.jokeList{
+    margin: 1em;
+    min-width: 300px;
+    max-width: 600px;
+    word-wrap: break-word;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.jokeList > ul{
+    list-style: none;
+    height: 400px;
+    overflow-y: auto;
+}
+.jokeList > .topBar {
+    position: sticky;
+    top: 0;
+    background: white;
+    text-align: center;
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+.jokeList > .topBar > h1{
+    margin-bottom: 0.5em;
+}
+.jokeList > ul > li{
+    padding: 1em;
+}
+.noJokes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    margin: 0 1em;
+}
