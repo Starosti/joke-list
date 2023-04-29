@@ -19,6 +19,9 @@
     padding: 1em;
     border-bottom: 1px solid black;
 }
+.jokeList > .topBar *{
+    margin: 0.5em
+}
 .jokeList > .topBar > h1{
     margin-bottom: 0.5em;
 }

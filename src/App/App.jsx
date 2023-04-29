@@ -50,7 +50,10 @@ function App() {
     fetch("https://official-joke-api.appspot.com/random_ten")
       .then((res) => res.json())
       .then((data) => {
-        setJokes([...jokes, ...data]);
+        let result = data.filter(
+          (joke) => jokes.find((j) => j.id === joke.id) === undefined
+        );
+        setJokes([...jokes, ...result]);
         setLoading(false);
       });
   }
