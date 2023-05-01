@@ -1,4 +1,6 @@
 .jokeList{
+    display: flex;
+    flex-direction: column;
     margin: 1em;
     min-width: 300px;
     max-width: 600px;
@@ -6,14 +8,21 @@
     border: 2px solid var(--dark-color);
     border-radius: 10px;
     overflow: hidden;
+    max-height: 500px;
+    box-shadow: 0 5px 10px var(--dark-color);
 }
 .jokeList > ul{
     list-style: none;
     height: 400px;
     overflow-y: auto;
+    background: linear-gradient(0deg, var(--background-color) 0%, var(--primary-color) 100%);
 }
-.jokeList > ul > li{
+.jokeList > ul > li {
     padding: 1em;
+    background-color: transparent !important;
+}
+.jokeList > ul > li *{
+    background-color: transparent !important;
 }
 .topBar {
     position: sticky;
@@ -47,5 +56,5 @@
     justify-content: center;
     text-align: center;
     height: 100%;
-    margin: 0 1em;
+    padding: 0 1em;
 }

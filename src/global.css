@@ -8,3 +8,8 @@
     --primary-color: #FFE5CA;
     --background-color: #FFF3E2;
 }
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

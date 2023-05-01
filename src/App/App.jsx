@@ -16,6 +16,17 @@ function App() {
     <>
       <BrowserRouter>
         <FavoriteJokesContext.Provider value={favoriteJokesHook}>
+          <header className="header">
+            <h1>Jokester</h1>
+            <nav>
+              <Link to="/" className="link">
+                🔎 Browse
+              </Link>
+              <Link to="/favorites" className="link">
+                ❤️ Favorites
+              </Link>
+            </nav>
+          </header>
           <div className="mainContainer">
             <Routes>
               <Route

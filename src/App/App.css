@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
 .mainContainer * {
     color: var(--dark-color);
@@ -13,6 +13,7 @@
 @media (max-width: 768px){
     .mainContainer{
         flex-direction: column;
+        justify-content: flex-start;
     }
 }
 .mainContainer h1{
@@ -39,4 +40,21 @@
 }
 .returnMain{
     padding: 2em 1em;
+    margin-top: 1.5em;
+}
+.header{
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em;
+    height: 60px;
+    box-shadow: 0 0 5px var(--dark-color);
+    z-index: 2;
+}
+.header > nav{
+    display: flex;
+    gap: 1em;
 }
