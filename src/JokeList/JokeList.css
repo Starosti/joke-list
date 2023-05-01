@@ -24,6 +24,9 @@
 .jokeList > ul > li *{
     background-color: transparent !important;
 }
+.jokeList > ul > li button:hover{
+    background-color: var(--dark-color) !important;
+}
 .topBar {
     position: sticky;
     top: 0;
