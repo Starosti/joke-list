@@ -44,9 +44,12 @@ function App() {
                 path="/favorites"
                 element={
                   <>
-                    <Link to="/" className="link returnMain">
-                      🏠 Go back to main page
-                    </Link>
+                    <div className="sidebar">
+                      <h1>Your favorite jokes:</h1>
+                      <Link to="/" className="link returnMain">
+                        🏠 Go back to main page
+                      </Link>
+                    </div>
                     <JokeList jokes={favoriteJokesHook[0]} />{" "}
                   </>
                 }
