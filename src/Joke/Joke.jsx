@@ -22,7 +22,7 @@ const Joke = ({ joke }) => {
           setPunchlineVisible(!punchlineVisible);
         }}
       >
-        {punchlineVisible ? "Hide Punchline" : "Show Punchline"}
+        {punchlineVisible ? "🔒 Hide Punchline" : "👀 Show Punchline"}
       </button>
       <button
         className={
@@ -36,7 +36,9 @@ const Joke = ({ joke }) => {
             : setFavoriteJokes([...favoriteJokes, joke]);
         }}
       >
-        {favoriteJokes.includes(joke) ? "Remove from favorites" : "Favorite"}
+        {favoriteJokes.includes(joke)
+          ? "❌ Remove from favorites"
+          : "❤️ Favorite"}
       </button>
     </div>
   );

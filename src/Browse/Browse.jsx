@@ -12,13 +12,11 @@ function Browse({ jokes, getJokes, loading, favoriteJokes }) {
         </button>
         {loading && <h1>Adding more jokes...</h1>}
         <Link to="/favorites" className="link">
-          See Your Favorite Jokes
+          ❤️ See Your Favorite Jokes
         </Link>
         {"Favorite Jokes: " + favoriteJokes.length}
       </div>
-      <div className="mainJokeList">
-        <JokeList jokes={jokes} />
-      </div>
+      <JokeList jokes={jokes} />
     </>
   );
 }

@@ -33,7 +33,9 @@ function App() {
                 path="/favorites"
                 element={
                   <>
-                    <Link to="/"> Go back</Link>
+                    <Link to="/" className="link returnMain">
+                      🏠 Go back to main page
+                    </Link>
                     <JokeList jokes={favoriteJokesHook[0]} />{" "}
                   </>
                 }

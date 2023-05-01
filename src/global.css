@@ -1,3 +1,10 @@
 *{
     font-family: "Mukta", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark-color) var(--background-color);
+    /* https://colorhunt.co/palette/fff3e2ffe5cafa9884e74646 */
+    --dark-color: #E74646;
+    --secondary-color: #FA9884;
+    --primary-color: #FFE5CA;
+    --background-color: #FFF3E2;
 }

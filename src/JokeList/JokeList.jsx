@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 function JokeList({ jokes }) {
   const [searchParam, setSearchParam] = useState("");
 
-  const [categories, setCategories] = useState(["All"]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [categories, setCategories] = useState(["all"]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const [filteredJokes, setFilteredJokes] = useState([]);
+  const [filteredJokes, setFilteredJokes] = useState(jokes);
 
   useEffect(() => {
-    const tempCategories = ["All"];
+    const tempCategories = ["all"];
     jokes.forEach((joke) => {
       if (!tempCategories.includes(joke.type)) {
         tempCategories.push(joke.type);
@@ -28,7 +28,7 @@ function JokeList({ jokes }) {
           (searchParam === "" ||
             joke.setup.toLowerCase().includes(searchParam.toLowerCase()) ||
             joke.punchline.toLowerCase().includes(searchParam.toLowerCase())) &&
-          (selectedCategory === "All" || joke.type === selectedCategory)
+          (selectedCategory === "all" || joke.type === selectedCategory)
         );
       })
     );

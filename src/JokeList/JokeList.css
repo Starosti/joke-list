@@ -3,7 +3,8 @@
     min-width: 300px;
     max-width: 600px;
     word-wrap: break-word;
-    border: 1px solid black;
+    border: 2px solid var(--dark-color);
+    border-radius: 10px;
     overflow: hidden;
 }
 .jokeList > ul{
@@ -11,23 +12,35 @@
     height: 400px;
     overflow-y: auto;
 }
-.jokeList > .topBar {
-    position: sticky;
-    top: 0;
-    background: white;
-    text-align: center;
-    padding: 1em;
-    border-bottom: 1px solid black;
-}
-.jokeList > .topBar *{
-    margin: 0.5em
-}
-.jokeList > .topBar > h1{
-    margin-bottom: 0.5em;
-}
 .jokeList > ul > li{
     padding: 1em;
 }
+.topBar {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 1em;
+    border-bottom: 2px solid var(--dark-color);
+}
+.topBar *{
+    margin: 0.5em
+}
+.topBar > h1{
+    margin-bottom: 0.5em;
+}
+.topBar > input {
+    padding: 0.5em;
+    border: 2px solid var(--dark-color);
+    border-radius: 10px;
+}
+.topBar > select {
+    padding: 0.5em;
+    border: 2px solid var(--dark-color);
+    border-radius: 10px;
+}
+.topBar > select:hover > option:active{
+    background-color: black;
+} 
 .noJokes{
     display: flex;
     align-items: center;
