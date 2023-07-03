@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import FavoriteJokesContext from "../Context/FavoriteJokesContext";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
@@ -7,6 +7,13 @@ import JokeList from "../JokeList/JokeList";
 
 function App() {
   const [jokes, setJokes] = useState([]);
+
+  useEffect(() => {
+    const localJokes = JSON.parse(localStorage.getItem("jokes"));
+    if (localJokes) setJokes(localJokes);
+    const localFavoriteJokes = JSON.parse(localStorage.getItem("favoriteJokes"));
+    if (localFavoriteJokes) favoriteJokesHook[1](localFavoriteJokes);
+  }, []);
 
   const [loading, setLoading] = useState(false);
 
@@ -69,7 +76,9 @@ function App() {
         let result = data.filter(
           (joke) => jokes.find((j) => j.id === joke.id) === undefined
         );
-        setJokes([...jokes, ...result]);
+        let tempJokes = [...jokes, ...result];
+        setJokes(tempJokes);
+        localStorage.setItem("jokes", JSON.stringify(tempJokes));
         setLoading(false);
       });
   }

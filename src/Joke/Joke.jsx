@@ -6,6 +6,20 @@ const Joke = ({ joke }) => {
   const [punchlineVisible, setPunchlineVisible] = useState(false);
   const [favoriteJokes, setFavoriteJokes] = useContext(FavoriteJokesContext);
 
+  function removeFavoriteJoke(joke) {
+    const newFavoriteJokes = favoriteJokes.filter(
+      (favoriteJoke) => favoriteJoke.id !== joke.id
+    );
+    setFavoriteJokes(newFavoriteJokes);
+    localStorage.setItem("favoriteJokes", JSON.stringify(newFavoriteJokes));
+  }
+
+  function addFavoriteJoke(joke) {
+    const newFavoriteJokes = [...favoriteJokes, joke];
+    setFavoriteJokes(newFavoriteJokes);
+    localStorage.setItem("favoriteJokes", JSON.stringify(newFavoriteJokes));
+  }
+
   return (
     <div className="jokeContainer">
       <div className="jokeSetup">
@@ -14,7 +28,7 @@ const Joke = ({ joke }) => {
       <div
         className={"jokePunchline " + (punchlineVisible ? "visible" : "hidden")}
       >
-        {joke.punchline}
+        {joke.punchline} <br /> <br /> {joke.type && <span className="jokeCategory">🏷️ {joke.type.charAt(0).toUpperCase() + joke.type.slice(1)}</span>}
       </div>
       <button
         className="jokePunchlineBtn"
@@ -30,10 +44,8 @@ const Joke = ({ joke }) => {
         }
         onClick={() => {
           favoriteJokes.includes(joke)
-            ? setFavoriteJokes(
-                favoriteJokes.filter((favoriteJoke) => favoriteJoke !== joke)
-              )
-            : setFavoriteJokes([...favoriteJokes, joke]);
+            ? removeFavoriteJoke(joke)
+            : addFavoriteJoke(joke);
         }}
       >
         {favoriteJokes.includes(joke)
