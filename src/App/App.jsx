@@ -34,7 +34,7 @@ function App() {
               </Link>
             </nav>
           </header>
-          <div className="mainContainer">
+          <main className="mainContainer">
             <Routes>
               <Route
                 path="/"
@@ -62,7 +62,7 @@ function App() {
                 }
               />
             </Routes>
-          </div>
+          </main>
         </FavoriteJokesContext.Provider>
       </BrowserRouter>
     </>

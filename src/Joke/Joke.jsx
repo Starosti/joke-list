@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "./Joke.css";
 import FavoriteJokesContext from "../Context/FavoriteJokesContext";
 
@@ -23,7 +23,7 @@ const Joke = ({ joke }) => {
   return (
     <div className="jokeContainer">
       <div className="jokeSetup">
-        {joke.setup} {favoriteJokes.includes(joke) && "❤️"}
+        {joke.setup} {favoriteJokes.some((fJoke) => fJoke.id === joke.id) && "❤️"}
       </div>
       <div
         className={"jokePunchline " + (punchlineVisible ? "visible" : "hidden")}
@@ -43,12 +43,12 @@ const Joke = ({ joke }) => {
           "jokeFavoriteBtn " + (punchlineVisible ? "visible" : "hidden")
         }
         onClick={() => {
-          favoriteJokes.includes(joke)
+          favoriteJokes.some((fJoke) => fJoke.id === joke.id)
             ? removeFavoriteJoke(joke)
             : addFavoriteJoke(joke);
         }}
       >
-        {favoriteJokes.includes(joke)
+        {favoriteJokes.some((fJoke) => fJoke.id === joke.id)
           ? "❌ Remove from favorites"
           : "❤️ Favorite"}
       </button>
